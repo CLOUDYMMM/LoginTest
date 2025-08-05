@@ -1,179 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-07-22T15:52:02.158056" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Demo02" source="c:\robot_tests\test_demo02.robot">
-<test id="s1-t1" name="TC-0003 Navigate between tab" line="29">
-<kw name="Open Registration Page" owner="Keywords">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:02.454915" level="INFO">Opening browser 'Chrome' to base url 'https://web-demo.qahive.com/e-commerce/register'.</msg>
-<arg>${REGISTER_URL}</arg>
-<arg>Chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-22T15:52:02.454630" elapsed="1.845894"/>
+<robot generator="Robot 7.0 (Python 3.12.3 on linux)" generated="2025-08-05T03:34:57.461376" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo" source="/home/runner/work/LoginTest/LoginTest/demo.robot">
+<test id="s1-t1" name="Demo vs code ide hello world" line="7">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${name}</var>
+<arg>QA Hive</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.567769" elapsed="0.000076"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-22T15:52:04.300972" elapsed="0.047741"/>
+<kw name="Log" owner="BuiltIn">
+<arg>Hello world ${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.567979" elapsed="0.000072"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='email']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-22T15:52:04.349042" elapsed="0.031023"/>
+<kw name="Log" owner="BuiltIn">
+<arg>Test completed successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.568141" elapsed="0.000046"/>
 </kw>
-<status status="PASS" start="2025-07-22T15:52:02.453988" elapsed="1.926311"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>QA Hive</arg>
+<arg>Name variable should be set correctly</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.568273" elapsed="0.000101"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-22T15:52:04.380742" elapsed="0.003003"/>
-</kw>
-<kw name="Input Login Info" owner="Keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:04.385820" level="INFO">Typing text 'testuser1@example.com' into text field 'xpath=//input[@name='email']'.</msg>
-<arg>${xpath_email}</arg>
-<arg>${EMAIL}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-22T15:52:04.385190" elapsed="0.307418"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:04.693501" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=//input[@name='password']'.</msg>
-<arg>${xpath_password}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-22T15:52:04.692977" elapsed="0.275142"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:04.384587" elapsed="0.583762"/>
-</kw>
-<kw name="Submit Registration Form" owner="Keywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:04.969717" level="INFO">Clicking button 'xpath=//button[@data-testid='submit']'.</msg>
-<arg>${xpath_submit}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-22T15:52:04.969205" elapsed="0.114030"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:04.968789" elapsed="0.114662"/>
-</kw>
-<kw name="Verify Login Success" owner="Keywords">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>/e-commerce</arg>
-<arg>10s</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:05.084259" elapsed="0.005934"/>
-</kw>
-<kw name="Location Should Contain" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:05.094355" level="INFO">Current location contains '/e-commerce'.</msg>
-<arg>/e-commerce</arg>
-<doc>Verifies that the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:05.090576" elapsed="0.004006"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:05.083886" elapsed="0.010818"/>
-</kw>
-<kw name="Verify ECommerce Success" owner="Keywords">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>/e-commerce/product-list</arg>
-<arg>10s</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:05.095342" elapsed="4.083872"/>
-</kw>
-<kw name="Location Should Contain" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:09.182127" level="INFO">Current location contains 'e-commerce/product-list'.</msg>
-<arg>e-commerce/product-list</arg>
-<doc>Verifies that the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.179494" elapsed="0.002896"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:05.095062" elapsed="4.087517"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:09.259488" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.183053" elapsed="0.077045"/>
-</kw>
-<kw name="Click Profile Tab" owner="Keywords">
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${xpath_profile_tab}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.261254" elapsed="0.275868"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${xpath_profile_tab}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.537469" elapsed="0.012920"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:09.551393" level="INFO">Clicking element 'xpath=/html/body/div/section/main/aside[2]/div/div/div/a[2]'.</msg>
-<arg>${xpath_profile_tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.550838" elapsed="0.057232"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:09.260621" elapsed="0.347716"/>
-</kw>
-<kw name="Verify Profile Success" owner="Keywords">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>/e-commerce/profile</arg>
-<arg>10s</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.609277" elapsed="0.005558"/>
-</kw>
-<kw name="Location Should Contain" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:09.618526" level="INFO">Current location contains 'e-commerce/profile'.</msg>
-<arg>e-commerce/profile</arg>
-<doc>Verifies that the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.615213" elapsed="0.003757"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:09.608871" elapsed="0.010316"/>
-</kw>
-<kw name="Click ECommerce Tab" owner="Keywords">
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${xpath_ecommerce_tab}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.620883" elapsed="0.272631"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${xpath_ecommerce_tab}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.893804" elapsed="0.010167"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:09.904787" level="INFO">Clicking element 'xpath=//*[@id="root"]/section/main/aside[2]/div/div/div/a[1]'.</msg>
-<arg>${xpath_ecommerce_tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.904365" elapsed="0.047840"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:09.620245" elapsed="0.332285"/>
-</kw>
-<kw name="Verify ECommerce Success" owner="Keywords">
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>/e-commerce/product-list</arg>
-<arg>10s</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.953502" elapsed="0.003841"/>
-</kw>
-<kw name="Location Should Contain" owner="SeleniumLibrary">
-<msg time="2025-07-22T15:52:09.961711" level="INFO">Current location contains 'e-commerce/product-list'.</msg>
-<arg>e-commerce/product-list</arg>
-<doc>Verifies that the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.957681" elapsed="0.004245"/>
-</kw>
-<status status="PASS" start="2025-07-22T15:52:09.953104" elapsed="0.009189"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-22T15:52:09.962841" elapsed="2.244395"/>
-</kw>
-<doc>Navigate between product page and profile page</doc>
-<status status="PASS" start="2025-07-22T15:52:02.453286" elapsed="9.754526"/>
+<doc>A simple hello world test to verify basic Robot Framework functionality</doc>
+<status status="PASS" start="2025-08-05T03:34:57.566965" elapsed="0.001503"/>
 </test>
-<status status="PASS" start="2025-07-22T15:52:02.162319" elapsed="10.046551"/>
+<test id="s1-t2" name="Test Hello Keyword" line="14">
+<kw name="Say Hello" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>Hello ${name}!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.569168" elapsed="0.000053"/>
+</kw>
+<return>
+<value>Hello ${name}!</value>
+<status status="PASS" start="2025-08-05T03:34:57.569271" elapsed="0.000045"/>
+</return>
+<var>${greeting}</var>
+<doc>A simple keyword to log a hello message</doc>
+<status status="PASS" start="2025-08-05T03:34:57.568974" elapsed="0.000392"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${greeting}</arg>
+<arg>Hello World!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.569452" elapsed="0.000060"/>
+</kw>
+<kw name="Say Hello" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<arg>Hello ${name}!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.569787" elapsed="0.000050"/>
+</kw>
+<return>
+<value>Hello ${name}!</value>
+<status status="PASS" start="2025-08-05T03:34:57.569877" elapsed="0.000021"/>
+</return>
+<var>${custom_greeting}</var>
+<arg>Robot Framework</arg>
+<doc>A simple keyword to log a hello message</doc>
+<status status="PASS" start="2025-08-05T03:34:57.569632" elapsed="0.000303"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${custom_greeting}</arg>
+<arg>Hello Robot Framework!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-08-05T03:34:57.570013" elapsed="0.000053"/>
+</kw>
+<doc>Test the reusable Say Hello keyword</doc>
+<status status="PASS" start="2025-08-05T03:34:57.568654" elapsed="0.001489"/>
+</test>
+<status status="PASS" start="2025-08-05T03:34:57.462067" elapsed="0.108405"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test Demo02" id="s1" pass="1" fail="0" skip="0">Test Demo02</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
 </suite>
 </statistics>
 <errors>
