@@ -1,32 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on linux)" generated="2025-08-05T03:31:08.832246" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.3 on linux)" generated="2025-08-05T03:34:16.177616" rpa="false" schemaversion="5">
 <suite id="s1" name="Demo" source="/home/runner/work/LoginTest/LoginTest/demo.robot">
-<test id="s1-t1" name="Demo vs code ide hello world" line="6">
+<test id="s1-t1" name="Demo vs code ide hello world" line="7">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-05T03:31:08.856201" level="INFO">${name} = QA Hive</msg>
+<msg time="2025-08-05T03:34:16.285218" level="INFO">${name} = QA Hive</msg>
 <var>${name}</var>
 <arg>QA Hive</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-05T03:31:08.856062" elapsed="0.000165"/>
+<status status="PASS" start="2025-08-05T03:34:16.285058" elapsed="0.000189"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-08-05T03:31:08.856582" level="INFO">Hello world QA Hive</msg>
+<msg time="2025-08-05T03:34:16.285573" level="INFO">Hello world QA Hive</msg>
 <arg>Hello world ${name}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-08-05T03:31:08.856403" elapsed="0.000213"/>
+<status status="PASS" start="2025-08-05T03:34:16.285432" elapsed="0.000179"/>
 </kw>
-<status status="PASS" start="2025-08-05T03:31:08.855578" elapsed="0.001162"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-05T03:34:16.285810" level="INFO">Test completed successfully</msg>
+<arg>Test completed successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-05T03:34:16.285737" elapsed="0.000103"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>QA Hive</arg>
+<arg>Name variable should be set correctly</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-05T03:34:16.285950" elapsed="0.000157"/>
+</kw>
+<doc>A simple hello world test to verify basic Robot Framework functionality</doc>
+<status status="PASS" start="2025-08-05T03:34:16.284216" elapsed="0.002009"/>
 </test>
-<status status="PASS" start="2025-08-05T03:31:08.832939" elapsed="0.024144"/>
+<test id="s1-t2" name="Test Hello Keyword" line="14">
+<kw name="Say Hello" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-05T03:34:16.287104" level="INFO">Hello World!</msg>
+<arg>Hello ${name}!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-05T03:34:16.286998" elapsed="0.000140"/>
+</kw>
+<return>
+<value>Hello ${name}!</value>
+<status status="PASS" start="2025-08-05T03:34:16.287187" elapsed="0.000048"/>
+</return>
+<msg time="2025-08-05T03:34:16.287384" level="INFO">${greeting} = Hello World!</msg>
+<var>${greeting}</var>
+<doc>A simple keyword to log a hello message</doc>
+<status status="PASS" start="2025-08-05T03:34:16.286754" elapsed="0.000652"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${greeting}</arg>
+<arg>Hello World!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-05T03:34:16.287526" elapsed="0.000122"/>
+</kw>
+<kw name="Say Hello" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-05T03:34:16.288098" level="INFO">Hello Robot Framework!</msg>
+<arg>Hello ${name}!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-05T03:34:16.287995" elapsed="0.000133"/>
+</kw>
+<return>
+<value>Hello ${name}!</value>
+<status status="PASS" start="2025-08-05T03:34:16.288170" elapsed="0.000030"/>
+</return>
+<msg time="2025-08-05T03:34:16.288324" level="INFO">${custom_greeting} = Hello Robot Framework!</msg>
+<var>${custom_greeting}</var>
+<arg>Robot Framework</arg>
+<doc>A simple keyword to log a hello message</doc>
+<status status="PASS" start="2025-08-05T03:34:16.287803" elapsed="0.000541"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${custom_greeting}</arg>
+<arg>Hello Robot Framework!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-05T03:34:16.288466" elapsed="0.000119"/>
+</kw>
+<doc>Test the reusable Say Hello keyword</doc>
+<status status="PASS" start="2025-08-05T03:34:16.286442" elapsed="0.002246"/>
+</test>
+<status status="PASS" start="2025-08-05T03:34:16.178338" elapsed="0.110653"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
 </suite>
 </statistics>
 <errors>

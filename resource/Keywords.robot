@@ -52,3 +52,9 @@ Click Profile Tab
     Scroll Element Into View    ${xpath_profile_tab}
     Wait Until Element Is Visible    ${xpath_profile_tab}    10s
     Click Element    ${xpath_profile_tab}
+
+Say Hello
+    [Documentation]    A simple keyword to log a hello message
+    [Arguments]    ${name}=World
+    Log    Hello ${name}!
+    RETURN    Hello ${name}!
